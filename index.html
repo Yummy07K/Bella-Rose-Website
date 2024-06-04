@@ -76,11 +76,11 @@
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home" onclick="scrollToSection('home')">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" onclick="scrollToSection('about')">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#service" onclick="scrollToSection('service')">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shop" onclick="scrollToSection('shop')">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" onclick="scrollToSection('contact')">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
@@ -88,7 +88,7 @@
     </header>
     <!-- Header End -->
     <!-- Hero Start -->
-    <section id="home" class="hero">
+    <section  class="hero">
         <div class="container">
             <div class="row">
                 <div class="col-11 offset-md-1 col-md-11">
@@ -153,7 +153,7 @@
     </section> -->
     <!-- Call To Action End -->
     <!-- Services Start -->
-    <section id="about" class="services">
+    <section id="home" class="services">
         <div class="container">
             <div class="title text-center">
                 <h6>Welcome</h6>
@@ -239,7 +239,7 @@
     </section>
     <!-- Services End -->
     <!-- Featured Start -->
-    <section class="featured">
+    <section id="about" class="featured">
         <div class="container">
             <div class="row">
                 <div class="col-md-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
@@ -392,7 +392,7 @@
     </section> -->
     <!-- Trust End -->
     <!-- Pricing Start -->
-    <section class="pricing-table">
+    <section id="shop" class="pricing-table">
         <div class="container">
             <div class="title text-center">
                 <h6 class="title-primary">Our prices</h6>
@@ -454,7 +454,7 @@
     </section>
     <!-- Pricing End -->
     <!-- Testimonial and Clients Start -->
-    <section class="testimonial-and-clients">
+    <section id="service" class="testimonial-and-clients">
         <div class="container">
             <div class="testimonials">
                 <div class="swiper-container test-slider">
@@ -545,7 +545,7 @@
     </section>
     <!-- Testimonial and Clients End -->
     <!-- Call To Action 2 Start -->
-    <section class="cta cta2" data-aos="fade-up" data-aos-delay="0">
+    <section id="contact" class="cta cta2" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
             <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-left">
                 <div class="content" data-aos="fade-right" data-aos-delay="200">
@@ -727,6 +727,21 @@
     <script src="assets/js/lightgallery-all.min.js"></script>
     <!--Template Script-->
     <script src="assets/js/main.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const options = {
+                behavior: "smooth",
+                block: "start", // This aligns the scroll to the top of the section
+                inline: "nearest" // This aligns the scroll horizontally (optional)
+                };
+                // Adjust the following property to control the scrolling speed:
+                options.duration = 10000; // Adjust the value in milliseconds (e.g., 2000 for slower)
+                element.scrollIntoView(options);
+            }
+        }
+      </script>
 </body>
 
 </html>
